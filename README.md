@@ -7,7 +7,9 @@
 
 # How To Use
 0. 본 저장소를 클론받는다 
-- `git clone `
+```
+git clone https://github.com/GuruneLee/mailToSG
+```
 1. Gmail 2단계 인증 설정
 - 본 서비스는 Gmail API 를 이용한다. [2단계 인증을 설정하고, 앱 비밀번호를 생성](https://support.google.com/accounts/answer/185833)하여 기억해두자\
 (혹은, [보안 수준이 낮은 앱 엑세스 허용](https://support.google.com/accounts/answer/6010255#zippy=%2C%EA%B3%84%EC%A0%95%EC%97%90%EC%84%9C-%EB%B3%B4%EC%95%88-%EC%88%98%EC%A4%80%EC%9D%B4-%EB%82%AE%EC%9D%80-%EC%95%B1%EC%9D%98-%EC%95%A1%EC%84%B8%EC%8A%A4%EA%B0%80-%EC%82%AC%EC%9A%A9-%EC%A4%91%EC%A7%80%EB%90%9C-%EA%B2%BD%EC%9A%B0)를 해야하는데, 그럼 연결된 몇 앱을 사용하지 못할 가능성이 있다.)
@@ -21,7 +23,7 @@
     "pass": "앱 비밀번호"
 }
 ```
-```javascript
+```json
 // config/recieverInfo
 {
   "user": "example-reciever@gmail.com"
