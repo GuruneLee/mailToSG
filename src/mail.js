@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-const senderInfo = require("../config/senderInfo.json");
+const oauthInfo = require("../config/oauth.json");
 const recieverInfo = require("../config/recieverInfo.json");
 const mailGenerator = require("./contentGenerator");
 
@@ -8,20 +8,22 @@ const mailGenerator = require("./contentGenerator");
 const transporterOptions = async () => {
   return {
     service: "gmail",
-    prot: 465,
+    port: 587,
     host: "smtp.gmail.com",
-    secure: false,
-    requireTLS: false,
+    secure: true,
     auth: {
-      user: senderInfo.user,
-      pass: senderInfo.pass,
+      type: "OAuth2",
+      user: oauthInfo.OAUTH_USER,
+      clientId: oauthInfo.OAUTH_CLIENT_ID,
+      clientSecret: oauthInfo.OAUTH_CLIENT_SECRET,
+      refreshToken: oauthInfo.OAUTH_REFRESH_TOKEN,
     },
   };
 };
 
 const mailOptions = async () => {
   return {
-    from: senderInfo.user,
+    from: oauthInfo.OAUTH_USER,
     to: recieverInfo.user,
     subject: mailGenerator.subject,
     html: await mailGenerator.generate(),

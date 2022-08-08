@@ -25,8 +25,8 @@ String.prototype.insertData = function ({
     );
 };
 
-module.exports = genMailBody = {
-  // generate mail body
+module.exports = mailGenerator = {
+  subject: mailContent.subject,
   async generate() {
     let mailBody = await fs.readFile(
       path.resolve("./src/template", "default-template.html")
