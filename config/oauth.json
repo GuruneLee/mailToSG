@@ -1,0 +1,6 @@
+{
+  "OAUTH_USER": "example-user@example.exam",
+  "OAUTH_CLIENT_ID": "oauth-client-id",
+  "OAUTH_CLIENT_SECRET": "oauth-client-secret",
+  "OAUTH_REFRESH_TOKEN": "oauth-refresh-token"
+}
